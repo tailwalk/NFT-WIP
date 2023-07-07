@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 18px;
+    font-family: 'Outfit', sans-serif;
+    background-color: hsl(217, 54%, 11%);
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nft-container {
+    background-color: hsl(216, 50%, 16%);
+    width: 350px;
+    height: 575px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 25px 0;
+    box-shadow: 0px 15px 10px 20px rgb(12, 23, 41); 
+}
+
+.image-container {
+    width: 300px;
+    align-self: center ;
+    position: relative;
+}
+
+.nft {
+    display: block;
+    width: 100%;
+    align-self:center ;
+    border-radius: 10px;
+}
+
+.eye-overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 247, 0.5);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity ease-in 100ms;
+}
+
+.eye-overlay .eye {
+    transform: translateY(10px);
+    transition: transform 100ms;
+}
+
+.eye-overlay:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.eye-overlay:hover .eye{
+    transform: translateY(0);
+}
+
+
+
+.info-grid {
+    padding: 25px;
+    display: grid;
+    grid-template-areas:
+    "name name"
+    "info info"
+    "eth-time eth-time"
+    "creator creator";
+    row-gap: 15px;
+}
+
+.nft-name {
+    grid-area: name;
+    color: hsl(0, 0%, 100%);
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.nft-description {
+    grid-area: info;
+    line-height: 1.5em;
+}
+
+.nft-description, .time, .creator {
+    color:hsl(215, 51%, 70%);
+    font-weight: 300;
+}
+
+.eth-time {
+    grid-area: eth-time;
+    display: flex;
+    justify-content: space-between;
+}
+.eth {
+    grid-area: eth;
+    color: hsl(178, 100%, 50%);
+    font-weight: 400;
+}
+
+.time {
+    grid-area: time;
+}
+
+.creator {
+    grid-area: creator;
+    display: flex;
+    align-items: center;
+    padding-top:1px;
+    border-top: 1px solid hsl(215, 32%, 27%);
+    margin-left: 10px;
+}
+
+.creator a {
+    color:hsl(0, 0%, 100%);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.avatar {
+    width: 20px;
+    margin-right: 15px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.creator a:hover, .nft-name:hover {
+    color:hsl(178, 100%, 50%);
+    
+}

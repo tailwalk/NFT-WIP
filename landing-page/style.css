@@ -12,6 +12,8 @@ body{
     font-family: 'Inter', sans-serif;
     background-color: #FEFEFE;
 }
+
+/* header */
 header{
     display: grid;
     grid-template-columns: .2fr .5fr 2fr 1.5fr .1fr ;
@@ -22,6 +24,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-transform: lowercase;
 
 }
 .logo>a{
@@ -63,45 +66,42 @@ nav{
     align-items: center;
     justify-content: center;
 }
-.button-login, .button-wallet{
+.button-login, .button-wallet, .button-explore, .button-how-it-works{
     width: 9rem;
     border-radius: 3rem;
     height: 3.1rem;
     border: 2px solid #eae1f1;
     cursor: pointer;
     margin-right: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-.login-link, .wallet-link{
+.login-link, .wallet-link, .explore-link, .how-it-works-link{
     font-size: 1.05rem;
 }
-.login-link{
+.login-link, .explore-link{
     color: #4c216d;
 }
-.wallet-link{
+.wallet-link, .how-it-works-link{
     color: #fff;
 }
-.button-wallet{
+.button-wallet, .button-how-it-works{
     width: 12rem;
     background-color: #6a4ed5;
     margin-left: 1rem;
 }
-.button-login:hover{
+.button-login:hover, .button-explore:hover{
     background-color: #6a4ed5;
     box-shadow: 2px 10px 50px 1px rgba(106, 78, 213, .3);
     transform: scale(1.05,1.05);
 }
-.button-wallet:hover{
+.button-wallet:hover, .button-how-it-works:hover{
     background-color: #FEFEFE;
     box-shadow: 2px 10px 50px 1px rgba(106, 78, 213, .15);
     transform: scale(1.05,1.05);
 }
-.button-login:hover .login-link {
+.button-login:hover .login-link, .button-explore:hover .explore-link{
 color: #fff;
 }
-.button-wallet:hover .wallet-link{
+.button-wallet:hover .wallet-link, .button-how-it-works:hover .how-it-works-link{
     color: #4c216d;
 }
 @media(max-width: 80rem){
@@ -120,16 +120,16 @@ color: #fff;
     .nav-link{
         font-size: 1.05rem
     }
-    .button-login, .button-wallet{
+    .button-login, .button-wallet, .button-explore, .button-how-it-works{
         width: 6rem;
         height: 2.6rem;
         margin-right: .7rem;
     }
-    .button-wallet{
+    .button-wallet, .button-how-it-works{
         width: 9rem;
         margin-left: .7rem;
     }
-    .login-link, .wallet-link{
+    .login-link, .wallet-link, .explore-link, .how-it-works-link{
         font-size: .95rem;
     }
 }
@@ -147,16 +147,16 @@ color: #fff;
     .nav-link{
         font-size: 1rem
     }
-    .button-login, .button-wallet{
+    .button-login, .button-wallet, .button-explore, .button-how-it-works{
         width: 5.5rem;
         height: 2.4rem;
         margin-right: .3rem;
     }
-    .button-wallet{
+    .button-wallet, .button-how-it-works{
         width: 8rem;
         margin-left: .7rem;
     }
-    .login-link, .wallet-link{
+    .login-link, .wallet-link, .explore-link, .how-it-works-link{
         font-size: .9rem;
     }
 }
@@ -171,16 +171,370 @@ color: #fff;
         display: none;
     }
 
-    .button-login, .button-wallet{
+    .button-login, .button-wallet, .button-how-it-works, .button-explore{
         width: 5.5rem;
         height: 2.4rem;
         margin-right: .3rem;
     }
-    .button-wallet{
+    .button-wallet, .button-how-it-works{
         width: 8rem;
         margin-left: .7rem;
     }
-    .login-link, .wallet-link{
+    .login-link, .wallet-link, .explore-link, .how-it-works-link{
         font-size: .9rem;
     }
+}
+/* main content */
+.image{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+image > img{
+    width: 100%;
+    min-width: 13rem;
+    height: auto;
+}
+main{
+    display: grid;
+    grid-template-columns: .12fr 1.3fr 1.4fr .01fr;
+    margin-top: 6rem;
+    gap: 1.5rem;
+}
+.data{
+    grid-column-start: 2;
+}
+.heading1, .heading2, .rare{
+    font-size: 4rem;
+    font-weight: 600;
+    max-width: 35rem;
+}
+.rare{
+    display: none;
+}
+.heading1{
+    color: #231b4f;
+}
+.heading2:hover, .heading2{
+    background: linear-gradient(85deg, #654ebf 8%, #a05bab 78%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+.heading2:hover{
+    background: linear-gradient(85deg, #a4649f 8%, #deb5cb 78%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-left: 1rem;
+}
+.description{
+    line-height: 1.7;
+    max-width: 32rem;
+    font-size: 1rem;
+    margin: 2rem 0;
+    opacity: .6;
+}
+.main-buttons, .numbers{
+    display: flex;
+    margin-bottom: 2rem;
+}
+.counter > p{
+    font-size: small;
+    opacity: .4;
+
+}
+.count{
+    display: inline-block;
+    color: #231b4f;
+    font-size: 2rem;
+}
+.counter{
+    margin-right: .2rem;
+}
+.counter2 > span{
+    font-weight: 500;
+    font-size: 2rem;
+}
+.button-explore, .button-how-it-works{
+    width: 12rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+@media(max-width: 82rem){
+    .heading1, .heading2{
+        font-size: 3.5em;
+        max-width: 32rem;
+    }
+    .count, .counter2 > span{
+        font-size: 1.7rem;
+    }
+    .counter2 > span{
+        margin-right: 4rem;
+    }
+}
+@media(max-width: 70rem){
+    main{
+        margin-top: 4rem;
+     }
+    .heading1, .heading2{
+        font-size: 3rem;
+        max-width: 28rem;
+    }
+.counter2 > span{
+        margin-right: 3.5rem;
+    }
+    .description{
+        max-width: 25rem;
+    }
+    .button-how-it-works,.button-explore {
+        width: 9rem;
+    }
+}
+@media(max-width: 64rem){
+    .heading1, .heading2{
+        font-size: 2.5rem;
+        max-width: 23rem;
+    } .counter2 > span{
+        margin-right: 3rem;
+    }
+    .description{
+        max-width: 22rem;
+        font-size: .9rem;
+    }
+    .button-how-it-works,.button-explore {
+        width: 9rem;
+    }
+    .count, .counter2 > span{
+        font-size: 1.4rem;
+    }
+}
+@media(max-width: 53rem){
+    .heading1, .heading2{
+        font-size: 2rem;
+        max-width: 18rem;
+    }
+    .counter2 > span{
+        margin-right: 2rem;
+    }
+    .description{
+        max-width: 18rem;
+        font-size: .85rem;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+    }
+    .button-how-it-works,.button-explore {
+        width: 7rem;
+    }
+    .button-how-it-works>a,.button-explore>a {
+       font-size: .8rem;
+    }
+.counter2 > span{
+        font-size: 1.4rem;
+    }
+}
+@media(max-width: 43rem){
+    .heading1, .heading2{
+        font-size: 1.7rem;
+        max-width: 15rem;
+    }
+    .counter2 > span{
+        margin-right: 1rem;
+    }
+    .heading1{
+margin-top: 24px;
+    }
+    .description{
+        max-width: 18rem;
+        font-size: .85rem;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+    }
+    .button-how-it-works,.button-explore {
+        width: 7rem;
+    }
+    .button-how-it-works>a,.button-explore>a {
+       font-size: .8rem;
+    }
+    .count, .counter2 > span{
+        font-size: 1.4rem;
+    }
+}
+@media(max-width: 33rem){
+   main{
+    display: flex;
+    flex-direction: column-reverse;
+
+   }
+   .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   .image > img{
+    width: 100%;
+    height: auto;
+    min-height: 10rem;
+    max-width: 20rem;
+   }
+   .data{
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+   }
+   .rare{
+    display: block;
+    font-size: 1.7rem;
+    margin-right: 6rem;
+    background: linear-gradient(85deg, #231b4f 8%, #a05bab 78%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin:.8rem auto 0;
+   }
+   .numbers{
+    margin-left: 2.5rem;
+    text-align: center;
+   }
+   .heading2{
+    display: none;
+   }
+
+}
+/* image */
+
+.main-area {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nft-container {
+    background-color: hsl(216, 50%, 16%);
+    width: 350px;
+    height: 575px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 25px 0;
+    box-shadow: 0px 15px 10px 20px rgb(12, 23, 41); 
+}
+
+.image-container {
+    width: 300px;
+    align-self: center ;
+    position: relative;
+}
+
+.nft {
+    display: block;
+    width: 100%;
+    align-self:center ;
+    border-radius: 10px;
+}
+
+.eye-overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 247, 0.5);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity ease-in 100ms;
+}
+
+.eye-overlay .eye {
+    transform: translateY(10px);
+    transition: transform 100ms;
+}
+
+.eye-overlay:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.eye-overlay:hover .eye{
+    transform: translateY(0);
+}
+
+
+
+.info-grid {
+    padding: 25px;
+    display: grid;
+    grid-template-areas:
+    "name name"
+    "info info"
+    "eth-time eth-time"
+    "creator creator";
+    row-gap: 15px;
+}
+
+.nft-name {
+    grid-area: name;
+    color: hsl(0, 0%, 100%);
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.nft-description {
+    grid-area: info;
+    line-height: 1.5em;
+}
+
+.nft-description, .time, .creator {
+    color:hsl(215, 51%, 70%);
+    font-weight: 300;
+}
+
+.eth-time {
+    grid-area: eth-time;
+    display: flex;
+    justify-content: space-between;
+}
+.eth {
+    grid-area: eth;
+    color: hsl(178, 100%, 50%);
+    font-weight: 400;
+}
+
+.time {
+    grid-area: time;
+}
+
+.creator {
+    grid-area: creator;
+    display: flex;
+    align-items: center;
+    padding-top:1px;
+    border-top: 1px solid hsl(215, 32%, 27%);
+    margin-left: 40px;
+}
+
+.creator a {
+    color:hsl(0, 0%, 100%);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.avatar {
+    width: 20px;
+    margin-right: 15px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.creator a:hover, .nft-name:hover {
+    color:hsl(178, 100%, 50%);
+    
 }
